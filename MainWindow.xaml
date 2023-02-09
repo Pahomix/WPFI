@@ -5,21 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PracticalWorkI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="0,-19,0,0">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="41*"/>
-            <ColumnDefinition Width="39*"/>
-        </Grid.ColumnDefinitions>
-        <Button x:Name="BML" Content="" HorizontalAlignment="Left" Margin="253,202,0,0" VerticalAlignment="Top" Height="67" Width="62" Click="BML_Click"/>
-        <Button x:Name="BMC" Content="" HorizontalAlignment="Left" Margin="338,202,0,0" VerticalAlignment="Top" Height="67" Width="62" Click="BMC_Click"/>
-        <Button x:Name="BDL" Content="" HorizontalAlignment="Left" Margin="253,310,0,0" VerticalAlignment="Top" Height="67" Width="62" Click="BDL_Click"/>
-        <Button x:Name="BHL" Content="" HorizontalAlignment="Left" Margin="253,99,0,0" VerticalAlignment="Top" Height="67" Width="62" Click="BHL_Click"/>
-        <Button x:Name="BHC" Content="" HorizontalAlignment="Left" Margin="338,99,0,0" VerticalAlignment="Top" Height="67" Width="62" Click="BHC_Click"/>
-        <Button x:Name="BDM" Content="" HorizontalAlignment="Left" Margin="338,310,0,0" VerticalAlignment="Top" Height="67" Width="62" Click="BDM_Click"/>
-        <Button x:Name="BMR" Content="" HorizontalAlignment="Left" Margin="24,202,0,0" VerticalAlignment="Top" Height="67" Width="62" Grid.Column="1" Click="BMR_Click"/>
-        <Button x:Name="BHR" Content="" HorizontalAlignment="Left" Margin="24,99,0,0" VerticalAlignment="Top" Height="67" Width="62" Grid.Column="1" Click="BHR_Click"/>
-        <Button x:Name="BDR" Content="" HorizontalAlignment="Left" Margin="24,310,0,0" VerticalAlignment="Top" Height="67" Width="62" Grid.Column="1" Click="BDR_Click"/>
-
+        Title="XXX" Height="450" Width="500">
+    <Grid>
+        <Button x:Name="Button6" Content="" HorizontalAlignment="Left" Margin="334,196,0,0" VerticalAlignment="Top" Height="114" Width="178" Click="Button_Click" Background="White"/>
+        <Button x:Name="Button1" Content="" HorizontalAlignment="Left" Margin="0,82,0,0" VerticalAlignment="Top" Height="114" Width="126" Click="Button_Click" Background="White"/>
+        <Button x:Name="Button5" Content="" HorizontalAlignment="Left" Margin="126,196,0,0" VerticalAlignment="Top" Height="114" Width="208" Click="Button_Click" Background="White"/>
+        <Button x:Name="Button7" Content="" HorizontalAlignment="Left" Margin="0,310,0,0" VerticalAlignment="Top" Height="114" Width="126" Click="Button_Click" Background="White"/>
+        <Button x:Name="Button8" Content="" HorizontalAlignment="Left" Margin="126,310,0,0" VerticalAlignment="Top" Height="114" Width="208" Click="Button_Click" Background="White"/>
+        <Button x:Name="Button9" Content="" HorizontalAlignment="Left" Margin="334,310,0,0" VerticalAlignment="Top" Height="114" Width="178" Click="Button_Click" Background="White"/>
+        <Button x:Name="Button4" Content="" HorizontalAlignment="Left" Margin="0,196,0,0" VerticalAlignment="Top" Height="114" Width="126" Click="Button_Click" Background="White"/>
+        <Button x:Name="Button2" Content="" HorizontalAlignment="Left" Margin="126,82,0,0" VerticalAlignment="Top" Height="114" Width="208" Click="Button_Click" Background="White"/>
+        <Button x:Name="Button3" Content="" HorizontalAlignment="Left" Margin="334,82,0,0" VerticalAlignment="Top" Height="114" Width="178" Click="Button_Click" Background="White"/>
+        <Button x:Name="RestartButton" Content="НОВАЯ ИГРА" HorizontalAlignment="Center" Height="82" VerticalAlignment="Top" Width="500" Click="RestartButton_Click" Foreground="White" Background="#FF9334C3"/>
     </Grid>
 </Window>

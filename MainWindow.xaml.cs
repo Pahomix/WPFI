@@ -17,55 +17,96 @@ namespace PracticalWorkI
 {
     public partial class MainWindow : Window
     {
-        public int i = 0;
+        private string player_Symbol = "X";
+        private string bot_Symbol = "O";
+        private string[] board = new string[9];
+        private Random random = new Random();
+
         public MainWindow()
         {
             InitializeComponent();
+            ResetBoard();
         }
 
-        private void BHL_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            BHL.Content = "x";
+            Button button = (Button)sender;
+            int i = Convert.ToInt32(button.Name.Substring(6)) - 1;
+            if (board[i] == null)
+            {
+                board[i] = player_Symbol;
+                button.Content = player_Symbol;
+                if (!IsGameOver(player_Symbol))
+                {
+                    BotTurn();
+                }
+            }
         }
 
-        private void BHR_Click(object sender, RoutedEventArgs e)
+        private void BotTurn()
         {
-            BHR.Content = "x";
+            int i = random.Next(9);
+            while (board[i] != null)
+            {
+                i = random.Next(9);
+            }
+
+            board[i] = bot_Symbol;
+            Button button = (Button)FindName("Button" + (i + 1));
+            button.Content = bot_Symbol;
+            IsGameOver(bot_Symbol);
         }
 
-        private void BML_Click(object sender, RoutedEventArgs e)
+        private bool IsGameOver(string symbol)
         {
-            BML.Content = "x";
+            if (
+                (board[0] == symbol && board[1] == symbol && board[2] == symbol) ||
+                (board[3] == symbol && board[4] == symbol && board[5] == symbol) ||
+                (board[6] == symbol && board[7] == symbol && board[8] == symbol) ||
+                (board[0] == symbol && board[3] == symbol && board[6] == symbol) ||
+                (board[1] == symbol && board[4] == symbol && board[7] == symbol) ||
+                (board[2] == symbol && board[5] == symbol && board[8] == symbol) ||
+                (board[0] == symbol && board[4] == symbol && board[8] == symbol) ||
+                (board[2] == symbol && board[4] == symbol && board[6] == symbol)
+            )
+            {
+                MessageBox.Show(symbol + " изнасиловал!");
+                ResetBoard();
+                return true;
+            }
+            if (board[0] != null && board[1] != null && board[2] != null &&
+                board[3] != null && board[4] != null && board[5] != null &&
+                board[6] != null && board[7] != null && board[8] != null)
+            {
+                MessageBox.Show("Ничья, родной, давай заново");
+                ResetBoard();
+                return true;
+            }
+            return false;
         }
 
-        private void BMC_Click(object sender, RoutedEventArgs e)
+        private void ResetBoard()
         {
-            BMC.Content = "x";
+            for (int i = 0; i < 9; i++)
+            {
+                board[i] = null;
+                Button button = (Button)FindName("Button" + (i + 1));
+                button.Content = null;
+            }
+            Button1.Content = "";
+            Button2.Content = "";
+            Button3.Content = "";
+            Button4.Content = "";
+            Button5.Content = "";
+            Button6.Content = "";
+            Button7.Content = "";
+            Button8.Content = "";
+            Button9.Content = "";
         }
 
-        private void BMR_Click(object sender, RoutedEventArgs e)
+        private void RestartButton_Click(object sender, RoutedEventArgs e)
         {
-            BMR.Content = "x";
-        }
-
-        private void BDL_Click(object sender, RoutedEventArgs e)
-        {
-            BDL.Content = "x";
-        }
-
-        private void BDM_Click(object sender, RoutedEventArgs e)
-        {
-            BDM.Content = "x";
-        }
-
-        private void BDR_Click(object sender, RoutedEventArgs e)
-        {
-            BDR.Content = "x";
-        }
-
-        private void BHC_Click(object sender, RoutedEventArgs e)
-        {
-            BHC.Content = "x"; 
+            ResetBoard();
         }
     }
 }

@@ -6,7 +6,6 @@ C:\Users\Даниил Селезнев\source\repos\PracticalWorkI\obj\Debug\Pra
 C:\Users\Даниил Селезнев\source\repos\PracticalWorkI\obj\Debug\MainWindow.g.cs
 C:\Users\Даниил Селезнев\source\repos\PracticalWorkI\obj\Debug\App.g.cs
 C:\Users\Даниил Селезнев\source\repos\PracticalWorkI\obj\Debug\PracticalWorkI_MarkupCompile.cache
-C:\Users\Даниил Селезнев\source\repos\PracticalWorkI\obj\Debug\PracticalWorkI_MarkupCompile.lref
 C:\Users\Даниил Селезнев\source\repos\PracticalWorkI\obj\Debug\MainWindow.baml
 C:\Users\Даниил Селезнев\source\repos\PracticalWorkI\obj\Debug\PracticalWorkI.g.resources
 C:\Users\Даниил Селезнев\source\repos\PracticalWorkI\obj\Debug\PracticalWorkI.Properties.Resources.resources
@@ -14,3 +13,4 @@ C:\Users\Даниил Селезнев\source\repos\PracticalWorkI\obj\Debug\Pra
 C:\Users\Даниил Селезнев\source\repos\PracticalWorkI\obj\Debug\PracticalWorkI.csproj.CoreCompileInputs.cache
 C:\Users\Даниил Селезнев\source\repos\PracticalWorkI\obj\Debug\PracticalWorkI.exe
 C:\Users\Даниил Селезнев\source\repos\PracticalWorkI\obj\Debug\PracticalWorkI.pdb
+C:\Users\Даниил Селезнев\source\repos\PracticalWorkI\obj\Debug\PracticalWorkI_MarkupCompile.lref
