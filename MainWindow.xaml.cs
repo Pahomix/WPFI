@@ -21,11 +21,12 @@ namespace PracticalWorkI
         private string bot_Symbol = "O";
         private string[] board = new string[9];
         private Random random = new Random();
+        private int symbol_Change;
 
         public MainWindow()
         {
             InitializeComponent();
-            ResetBoard();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -46,12 +47,17 @@ namespace PracticalWorkI
         private void BotTurn()
         {
             int i = random.Next(9);
-            while (board[i] != null)
+            if (symbol_Change == 0)
             {
-                i = random.Next(9);
+                while (board[i] != null)
+                {
+                    i = random.Next(9);
+                    board[i] = player_Symbol;
+                }
             }
+            else board[i] = bot_Symbol;
 
-            board[i] = bot_Symbol;
+            
             Button button = (Button)FindName("Button" + (i + 1));
             button.Content = bot_Symbol;
             IsGameOver(bot_Symbol);
@@ -71,7 +77,7 @@ namespace PracticalWorkI
             )
             {
                 MessageBox.Show(symbol + " изнасиловал!");
-                ResetBoard();
+                DisableButtons();
                 return true;
             }
             if (board[0] != null && board[1] != null && board[2] != null &&
@@ -79,7 +85,7 @@ namespace PracticalWorkI
                 board[6] != null && board[7] != null && board[8] != null)
             {
                 MessageBox.Show("Ничья, родной, давай заново");
-                ResetBoard();
+                DisableButtons();
                 return true;
             }
             return false;
@@ -87,6 +93,8 @@ namespace PracticalWorkI
 
         private void ResetBoard()
         {
+            EnableButtons();
+
             for (int i = 0; i < 9; i++)
             {
                 board[i] = null;
@@ -107,6 +115,32 @@ namespace PracticalWorkI
         private void RestartButton_Click(object sender, RoutedEventArgs e)
         {
             ResetBoard();
+        }
+
+        private void DisableButtons()
+        {
+            Button1.IsEnabled = false;
+            Button2.IsEnabled = false;
+            Button3.IsEnabled = false;
+            Button4.IsEnabled = false;
+            Button5.IsEnabled = false;
+            Button6.IsEnabled = false;
+            Button7.IsEnabled = false;
+            Button8.IsEnabled = false;
+            Button9.IsEnabled = false;
+        }
+
+        private void EnableButtons()
+        {
+            Button1.IsEnabled = true;
+            Button2.IsEnabled = true;
+            Button3.IsEnabled = true;
+            Button4.IsEnabled = true;
+            Button5.IsEnabled = true;
+            Button6.IsEnabled = true;
+            Button7.IsEnabled = true;
+            Button8.IsEnabled = true;
+            Button9.IsEnabled = true;
         }
     }
 }
