@@ -26,7 +26,7 @@ namespace PracticalWorkI
         public MainWindow()
         {
             InitializeComponent();
-
+            ResetBoard();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -99,17 +99,8 @@ namespace PracticalWorkI
             {
                 board[i] = null;
                 Button button = (Button)FindName("Button" + (i + 1));
-                button.Content = null;
+                if (button != null) button.Content = null;
             }
-            Button1.Content = "";
-            Button2.Content = "";
-            Button3.Content = "";
-            Button4.Content = "";
-            Button5.Content = "";
-            Button6.Content = "";
-            Button7.Content = "";
-            Button8.Content = "";
-            Button9.Content = "";
         }
 
         private void RestartButton_Click(object sender, RoutedEventArgs e)
