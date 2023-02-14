@@ -40,7 +40,7 @@ namespace PracticalWorkI
                 if (!IsGameOver(player_Symbol)) BotTurn();
             }
 
-            
+
         }
 
         private void BotTurn()
@@ -48,10 +48,14 @@ namespace PracticalWorkI
             int i = random.Next(9);
             if (symbol_Change == 0)
             {
-                while (board[i] != null)
+                while (true)
                 {
-                    i = random.Next(9);
-                    board[i] = player_Symbol;
+                    if (board[i] != null || board[i] == player_Symbol)
+                    {
+                        i = random.Next(9);
+                        board[i] = player_Symbol;
+                    }
+                    break;
                 }
             }
             else board[i] = bot_Symbol;
