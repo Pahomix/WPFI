@@ -26,7 +26,7 @@ namespace PracticalWorkI
         public MainWindow()
         {
             InitializeComponent();
-            ResetBoard();
+            DisableButtons();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -37,11 +37,10 @@ namespace PracticalWorkI
             {
                 board[i] = player_Symbol;
                 button.Content = player_Symbol;
-                if (!IsGameOver(player_Symbol))
-                {
-                    BotTurn();
-                }
+                if (!IsGameOver(player_Symbol)) BotTurn();
             }
+
+            
         }
 
         private void BotTurn()
@@ -99,7 +98,7 @@ namespace PracticalWorkI
             {
                 board[i] = null;
                 Button button = (Button)FindName("Button" + (i + 1));
-                if (button != null) button.Content = null;
+                if (button.Content != null) button.Content = null;
             }
         }
 
